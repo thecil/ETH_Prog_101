@@ -1,5 +1,5 @@
 pragma solidity 0.5.12; //must always be the 1st line to know which is the solidity version that will be used
-pragma experimental ABIEncoderV2;
+pragma experimental ABIEncoderV2; //Experimental encoder, not used on production
 
 contract HelloWorld{
     
@@ -51,7 +51,6 @@ contract HelloWorld{
     
     //struct variable
     struct Person{
-        uint id;
         string name;
         uint age;
         uint height;
@@ -76,10 +75,14 @@ contract HelloWorld{
         address creator = msg.sender;
         //This create a Person
         Person memory newPerson;
-        //newPerson.id = people.length;
+        //add new data for the array Person
+        
+        
+        
         newPerson.name = name;
         newPerson.age = age;
         newPerson.height = height;
+        //
         peopleMap[creator] = newPerson;
         
         //people.push(newPerson);
