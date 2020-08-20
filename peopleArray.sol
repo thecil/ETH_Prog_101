@@ -26,6 +26,7 @@ contract HelloWorld{
         string name;
         uint age;
         uint height;
+        //assignment: Modify the Person struct and  add an address property Creator.
         address owner;
     }
     
@@ -45,6 +46,7 @@ contract HelloWorld{
                             name,
                             age,
                             height,
+                            //assignment: Make sure to edit the createPerson function so that it sets this property to the msg.sender.
                             msg.sender
         ));
         /*
@@ -54,13 +56,19 @@ contract HelloWorld{
         total_people[msg.sender].push(people.length - 1); //-1 need it to save last index position
     }
     
+    //assignment: Create a public get function where we can input an index and retrieve the Person object with that index in the array.
+    function getPerson(uint index) public view returns(string memory, uint, uint, address){
+        return(people[index].name, people[index].age, people[index].height, people[index].owner);
+    }
     
     /*
     Bonus Assignment #2 [Difficult]:
     - Create a function that returns an array of all the ID's that the msg.sender has created.
     */
-    function getPerson() public view returns(uint256[] memory){
+    function getId() public view returns(uint256[] memory){
         //set to only get the mapping from the account owner
         return (total_people[msg.sender]);
     }
+    
+
 }
