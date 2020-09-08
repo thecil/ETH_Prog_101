@@ -1,6 +1,4 @@
 pragma solidity 0.5.12; //must always be the 1st line to know which is the solidity version that will be used
-//pragma experimental ABIEncoderV2; //Experimental encoder, not used on production
-
 
 contract HelloWorld{
     
